@@ -1,18 +1,21 @@
-body {
-    margin: 2rem;
+* {
+    margin: 0;
     padding: 0;
-    border: none;
+    box-sizing: border-box;
+}
+
+body {
     display: grid;
-    height: 100vh;
-    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 100vh;
+    grid-template-columns: 10rem 1fr 1fr 10rem;
     grid-template-rows: 5rem 1fr 1fr 1fr 5rem;
-    gap: 30px;
+    column-gap: 30px;
     grid-template-areas: 
-    "header header header"
-    "desc desc ."
-    ". desci desci"
-    "descri descri ."
-    "footer footer footer";
+    "header header header header"
+    ". lion lion ."
+    ". size size ."
+    ". habitat habitat ."
+    "footer footer footer footer";
     background-color: #1f1f1f;
     color: #fafafa;
 }
@@ -37,28 +40,46 @@ a {
     color: inherit;
 }
 
-.lions {
-    grid-area: desc;
-    background-color: red;
+footer {
+    grid-area: footer;
+    display: flex;
+}
+
+footer a {
+    margin: auto;
+}
+
+.lion {
+    grid-area: lion;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lion p {
+    max-width: 70ch;
+}
+
+.pic {
+    grid-area: 2/ 2/ 3/ 3;
+    background-image: url("../images/lion-Kenya-Masai-Mara-National-Reserve.jpg");
+    width: auto;
 }
 
 .size {
-    grid-area: desci;
-    text-align: end;
-    background-color: blue;
+    grid-area: size;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .habitat {
-    grid-area: descri;
-    background-color: green;
-}
-.par-size {
-    max-width: 70ch;
+    grid-area: habitat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.par-size-right {
-    max-width: 70ch;
-    margin-right: 0;
-    margin-left: auto;
-}
