@@ -4,14 +4,14 @@
     box-sizing: border-box;
 }
 
-body {
+.gridindex {
     display: grid;
     min-height: 100vh;
     grid-template-columns: 10rem 1fr 1fr 10rem;
     grid-template-rows: 5rem 1fr 1fr 1fr 5rem;
     column-gap: 30px;
     grid-template-areas: 
-    "header header header header"
+    ". header header ."
     ". lion lion ."
     ". size size ."
     ". habitat habitat ."
@@ -19,6 +19,7 @@ body {
     background-color: #1f1f1f;
     color: #fafafa;
 }
+
 
 header {
     grid-area: header;
@@ -38,6 +39,11 @@ a {
     font-size: 1.8em;
     margin-left: 1.5em;
     color: inherit;
+    letter-spacing: 1px;
+}
+
+header a:hover {
+    border-bottom: 1px solid #fafafa;
 }
 
 footer {
@@ -61,6 +67,7 @@ footer a {
     grid-area: 2/ 2/ 3/ 3;
     background: url("../images/lion-Kenya-Masai-Mara-National-Reserve.jpg") no-repeat;
     background-size: contain;
+    margin-top: 10px;
 }
 
 .size {
@@ -84,6 +91,7 @@ footer a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: right;
 }
 
 .psize {
@@ -92,11 +100,71 @@ footer a {
 
 .savana {
     grid-area: 4/2/5/3;
-    background: url("../images/kenya-g8f8c09f8e_1920.jpg") no-repeat left;
+    background: url("../images/savana.jpg") no-repeat left;
     background-size: contain;
+    margin-bottom: 10px;
 }
 
+.selected {
+    border-bottom: 1px solid #fafafa ;
+}
+
+@media screen and (min-width:1800px) {
+    body {
+        margin: 0 10%;
+    }
+}
+
+@media only screen and (max-width:1300px) {
+    .gridindex {
+        display: grid;
+        min-height: 100vh;
+        max-width: 90%;
+        margin: 0 auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: 5rem 1fr 1fr 1fr 5rem;
+        row-gap: 20px;
+        grid-template-areas: 
+        " header"
+        " lion  "
+        " size  "
+        " habitat  "
+        " footer  ";
+        background-color: #1f1f1f;
+        color: #fafafa;
+    }
+
+    .habitat p {
+        background-color: #1f1f1fbb;
+    }
 
 
+    .savana {
+        grid-area: habitat;
+        background: url("../images/kenya-g8f8c09f8e_1920.jpg") no-repeat center;
+        background-size: contain;
+        margin-bottom: 10px;
+    }
 
+    .pic2 {
+        grid-area: size;
+        background: url("../images/Federico_Veronesi_Lions-cover-image-e359a4e.jpg") no-repeat right;
+        background-size: contain;
+    }
+
+    .pic {
+        grid-area: lion;
+        background: url("../images/lion-Kenya-Masai-Mara-National-Reserve.jpg") no-repeat;
+        background-size: contain;
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (max-width:780px) {
+    a {
+        font-size: 1em;
+        margin-left: 1em;
+        word-spacing: normal;
+    }
+}
 
