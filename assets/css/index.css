@@ -29,6 +29,10 @@ header {
     margin: 0 2em;
 }
 
+.lineheader {
+    line-height: 75px;
+}
+
 header li {
     list-style-type: none;
     display: inline;
